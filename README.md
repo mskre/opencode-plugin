@@ -52,7 +52,35 @@ You are installing a global OpenCode plugin that automatically downscales oversi
 
 Follow these steps exactly, in order.
 
-### Step 1: Create the helper library
+### Step 1: Check for Bun
+
+Check if Bun is installed by running:
+
+```bash
+bun --version
+```
+
+If Bun is installed, skip to Step 2.
+
+If Bun is NOT installed, ask the user:
+
+> "Bun is not installed. This plugin requires a JavaScript package manager. Bun is recommended because it's faster and is what OpenCode uses internally. Would you like to install Bun, or use npm instead?"
+
+If the user wants Bun, install it:
+
+```bash
+curl -fsSL https://bun.sh/install | bash
+```
+
+Then confirm it works:
+
+```bash
+bun --version
+```
+
+If the user prefers npm, use `npm` in place of `bun` for all subsequent commands (`npm install` instead of `bun add`, etc.).
+
+### Step 2: Create the helper library
 
 Create the file `~/.config/opencode/lib/image-downscale.ts` with this content:
 
@@ -144,7 +172,7 @@ export async function rewriteMessageParts<T extends FileLikePart>(parts: T[]) {
 }
 ```
 
-### Step 2: Create the plugin hook
+### Step 3: Create the plugin hook
 
 Create the file `~/.config/opencode/plugins/image-downscale.ts` with this content:
 
@@ -165,7 +193,7 @@ export const ImageDownscalePlugin: Plugin = async () => {
 export default ImageDownscalePlugin
 ```
 
-### Step 3: Install the dependency
+### Step 4: Install the dependency
 
 Run this in the terminal:
 
@@ -173,7 +201,7 @@ Run this in the terminal:
 cd ~/.config/opencode && bun add sharp
 ```
 
-### Step 4: Verify
+### Step 5: Verify
 
 Run this to confirm both files exist and sharp is installed:
 
