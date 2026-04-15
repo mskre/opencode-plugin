@@ -2,6 +2,8 @@
 
 A collection of local plugins for [OpenCode](https://opencode.ai).
 
+> **Tip:** Using an AI coding assistant? Skip to the [LLM Install](#llm-install) section and paste the instructions directly into your assistant for automated setup.
+
 ## Plugins
 
 ### [image-downscale](./image-downscale)
