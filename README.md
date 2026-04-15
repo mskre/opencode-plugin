@@ -68,7 +68,29 @@ If Bun is NOT installed, ask the user:
 
 > "Bun is not installed. This plugin requires a JavaScript package manager. Bun is recommended because it's faster and is what OpenCode uses internally. Would you like to install Bun, or use npm instead?"
 
-If the user wants Bun, install it:
+If the user wants Bun, check if the system is macOS:
+
+```bash
+uname -s
+```
+
+If macOS, check if Homebrew is installed:
+
+```bash
+brew --version
+```
+
+If Homebrew is available, ask the user:
+
+> "You have Homebrew installed. Would you like to install Bun via Homebrew (`brew install oven-sh/bun/bun`), or via the official install script?"
+
+If the user wants Homebrew:
+
+```bash
+brew install oven-sh/bun/bun
+```
+
+Otherwise (no Homebrew, not macOS, or user prefers the install script):
 
 ```bash
 curl -fsSL https://bun.sh/install | bash
