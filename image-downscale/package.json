@@ -1,0 +1,9 @@
+{
+  "name": "opencode-plugin-image-downscale",
+  "version": "1.0.0",
+  "description": "OpenCode plugin that automatically downscales oversized uploaded images (max 2000px longest side)",
+  "dependencies": {
+    "@opencode-ai/plugin": "1.4.0",
+    "sharp": "^0.34.5"
+  }
+}
