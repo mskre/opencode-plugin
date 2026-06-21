@@ -20,11 +20,50 @@ External checkout that injects the Ponytail lazy senior developer ruleset into O
 **Plugin path:** `~/.config/opencode/vendor/ponytail/.opencode/plugins/ponytail.mjs`
 **Commands:** symlinked into `~/.config/opencode/command/`
 
+### Frontend workflow plugins
+
+Configured globally in `~/.config/opencode/opencode.json`:
+
+- `@nick-vi/opencode-type-inject@latest` for direct type injection support.
+- `opencode-pty@0.3.4` for PTY-backed terminal behavior, installed from `~/.config/opencode/vendor/opencode-pty-pinned` with `bun-pty` pinned to `0.4.8`.
+- `@bfirestone45/opencode-frontend-design@latest` for the packaged `frontend-design` skill path.
+- `opencode-skill-creator@latest` for OpenCode-native skill creation help.
+
+`opencode-pty@latest` currently resolves `bun-pty` `0.4.10`, which trips the plugin's startup guard. The global config points at the pinned local plugin path instead:
+
+```text
+~/.config/opencode/vendor/opencode-pty-pinned/node_modules/opencode-pty/dist/index.js
+```
+
+## MCP Servers
+
+All MCP servers are disabled by default and should be enabled only for sessions that need them.
+
+- `playwright` via `@playwright/mcp`
+- `chrome-devtools` via `chrome-devtools-mcp@latest` with `--isolated`, `--no-usage-statistics`, and `--no-performance-crux`
+- `context7` via `@upstash/context7-mcp@latest`
+- `magic-ui` via `@magicuidesign/mcp@latest`
+- `shadcn` via `shadcn@latest mcp`
+- `accessibility-scanner` via `mcp-accessibility-scanner@latest`
+- Existing disabled servers: `mobbin`, `mobile-mcp`, `n8n`, `google-scholar`, and `trogon`
+
+## Local Skills
+
+Local OpenCode skills live under `~/.opencode/skills` and are loaded through the global `skills.paths` entry.
+
+- `ui-ux-pro-max`
+- `vault-daydream`
+- `mcp-builder`
+- `cloudflare-skills`
+- `stop-slop`
+- `webapp-testing`
+
 ## Global Setup Sync
 
-This repo is the GitHub-backed record for plugins installed in `~/.config/opencode`.
+This repo is the GitHub-backed record for plugins, MCP servers, and local skills installed in the global OpenCode setup.
 
 - Update `installed-plugins.json` and this README whenever adding, removing, or updating a global OpenCode plugin.
+- Track global MCP and skill changes in `installed-plugins.json` when they are part of the OpenCode setup.
 - Verify the live config at `~/.config/opencode/opencode.json` after changes.
 - Commit and push this repo to `origin/main` so GitHub stays synced with the live setup.
 

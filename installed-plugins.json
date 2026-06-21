@@ -14,6 +14,37 @@
       "configuredIn": "plugin"
     },
     {
+      "name": "opencode-type-inject",
+      "type": "npm",
+      "spec": "@nick-vi/opencode-type-inject@latest",
+      "configuredIn": "plugin"
+    },
+    {
+      "name": "opencode-pty",
+      "type": "local-pinned-npm",
+      "sourcePackage": "opencode-pty@0.3.4",
+      "pluginPath": "/Users/mikkel/.config/opencode/vendor/opencode-pty-pinned/node_modules/opencode-pty/dist/index.js",
+      "vendorPath": "/Users/mikkel/.config/opencode/vendor/opencode-pty-pinned",
+      "pinnedDependencies": {
+        "bun-pty": "0.4.8"
+      },
+      "configuredIn": "plugin",
+      "notes": "opencode-pty@latest resolves bun-pty 0.4.10 and fails its startup guard; this local vendor install pins bun-pty to 0.4.8."
+    },
+    {
+      "name": "opencode-frontend-design",
+      "type": "npm",
+      "spec": "@bfirestone45/opencode-frontend-design@latest",
+      "configuredIn": "plugin",
+      "notes": "Adds the packaged frontend-design skill path to OpenCode."
+    },
+    {
+      "name": "opencode-skill-creator",
+      "type": "npm",
+      "spec": "opencode-skill-creator@latest",
+      "configuredIn": "plugin"
+    },
+    {
       "name": "image-downscale",
       "type": "local-auto-plugin",
       "source": "image-downscale/src/plugins/image-downscale.ts",
@@ -31,6 +62,112 @@
       "commandsPath": "/Users/mikkel/.config/opencode/command",
       "levels": ["lite", "full", "ultra", "off"],
       "stateFile": "/Users/mikkel/.config/opencode/.ponytail-active"
+    }
+  ],
+  "mcpServers": [
+    {
+      "name": "playwright",
+      "type": "local",
+      "package": "@playwright/mcp",
+      "enabledByDefault": false
+    },
+    {
+      "name": "chrome-devtools",
+      "type": "local",
+      "package": "chrome-devtools-mcp@latest",
+      "enabledByDefault": false,
+      "args": ["--isolated", "--no-usage-statistics", "--no-performance-crux"]
+    },
+    {
+      "name": "context7",
+      "type": "local",
+      "package": "@upstash/context7-mcp@latest",
+      "enabledByDefault": false
+    },
+    {
+      "name": "magic-ui",
+      "type": "local",
+      "package": "@magicuidesign/mcp@latest",
+      "enabledByDefault": false
+    },
+    {
+      "name": "shadcn",
+      "type": "local",
+      "package": "shadcn@latest mcp",
+      "enabledByDefault": false
+    },
+    {
+      "name": "accessibility-scanner",
+      "type": "local",
+      "package": "mcp-accessibility-scanner@latest",
+      "enabledByDefault": false
+    },
+    {
+      "name": "mobbin",
+      "type": "remote",
+      "url": "https://api.mobbin.com/mcp",
+      "enabledByDefault": false
+    },
+    {
+      "name": "mobile-mcp",
+      "type": "local",
+      "package": "@mobilenext/mobile-mcp@latest",
+      "enabledByDefault": false
+    },
+    {
+      "name": "n8n",
+      "type": "local",
+      "command": "/Users/mikkel/.config/opencode/tools/n8n-mcp-bridge.sh",
+      "enabledByDefault": false
+    },
+    {
+      "name": "google-scholar",
+      "type": "local",
+      "command": "npx tsx /Users/mikkel/google-scholar-mcp/src/index.ts",
+      "enabledByDefault": false
+    },
+    {
+      "name": "trogon",
+      "type": "local",
+      "command": "npx tsx /Users/mikkel/trogon/packages/mcp-server/src/index.ts --server-url wss://trogon.bitstraum.no/yjs --api-base https://trogon.bitstraum.no/api --agent-name OpenCode",
+      "enabledByDefault": false
+    }
+  ],
+  "skills": [
+    {
+      "name": "ui-ux-pro-max",
+      "type": "local",
+      "path": "/Users/mikkel/.opencode/skills/ui-ux-pro-max/SKILL.md"
+    },
+    {
+      "name": "vault-daydream",
+      "type": "local",
+      "path": "/Users/mikkel/.opencode/skills/vault-daydream/SKILL.md"
+    },
+    {
+      "name": "mcp-builder",
+      "type": "local",
+      "path": "/Users/mikkel/.opencode/skills/mcp-builder/SKILL.md"
+    },
+    {
+      "name": "cloudflare-skills",
+      "type": "local",
+      "path": "/Users/mikkel/.opencode/skills/cloudflare-skills/SKILL.md"
+    },
+    {
+      "name": "stop-slop",
+      "type": "local",
+      "path": "/Users/mikkel/.opencode/skills/stop-slop/SKILL.md"
+    },
+    {
+      "name": "webapp-testing",
+      "type": "local",
+      "path": "/Users/mikkel/.opencode/skills/webapp-testing/SKILL.md"
+    },
+    {
+      "name": "frontend-design",
+      "type": "plugin-provided",
+      "source": "@bfirestone45/opencode-frontend-design"
     }
   ]
 }
