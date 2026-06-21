@@ -20,20 +20,9 @@ External checkout that injects the Ponytail lazy senior developer ruleset into O
 **Plugin path:** `~/.config/opencode/vendor/ponytail/.opencode/plugins/ponytail.mjs`
 **Commands:** symlinked into `~/.config/opencode/command/`
 
-### Frontend workflow plugins
-
-Configured globally in `~/.config/opencode/opencode.json`:
+### Other global plugins
 
 - `@nick-vi/opencode-type-inject@latest` for direct type injection support.
-- `opencode-pty@0.3.4` for PTY-backed terminal behavior, installed from `~/.config/opencode/vendor/opencode-pty-pinned` with `bun-pty` pinned to `0.4.8`.
-- `@bfirestone45/opencode-frontend-design@latest` for the packaged `frontend-design` skill path.
-- `opencode-skill-creator@latest` for OpenCode-native skill creation help.
-
-`opencode-pty@latest` currently resolves `bun-pty` `0.4.10`, which trips the plugin's startup guard. The global config points at the pinned local plugin path instead:
-
-```text
-~/.config/opencode/vendor/opencode-pty-pinned/node_modules/opencode-pty/dist/index.js
-```
 
 ## MCP Servers
 
@@ -55,7 +44,6 @@ Local OpenCode skills are tracked in [`skills/`](./skills), installed to `~/.ope
 - `vault-daydream`
 - `mcp-builder`
 - `cloudflare-skills`
-- `stop-slop`
 - `webapp-testing`
 
 ## Sync To A New Machine
@@ -79,24 +67,6 @@ Make sure the global OpenCode config includes an absolute `skills.paths` entry f
 ```
 
 For Linux servers or other usernames, replace `/Users/mikkel` with that machine's absolute home path.
-
-To install the pinned PTY plugin workaround on another machine:
-
-```bash
-mkdir -p ~/.config/opencode/vendor/opencode-pty-pinned
-rsync -a ~/opencode-plugin/vendor/opencode-pty-pinned/ ~/.config/opencode/vendor/opencode-pty-pinned/
-npm install --prefix ~/.config/opencode/vendor/opencode-pty-pinned
-```
-
-Then point the OpenCode `plugin` entry at the machine's absolute pinned plugin path:
-
-```json
-{
-  "plugin": [
-    "/Users/mikkel/.config/opencode/vendor/opencode-pty-pinned/node_modules/opencode-pty/dist/index.js"
-  ]
-}
-```
 
 Restart OpenCode after syncing skills or changing plugin config.
 

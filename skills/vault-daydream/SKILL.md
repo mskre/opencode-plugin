@@ -9,8 +9,8 @@ Use this skill to turn the user's Obsidian vault into grounded ideas, roadmaps, 
 
 ## Required Context
 
-- Start from `/Users/mikkel/vaults/main`.
-- For infrastructure, servers, services, agents, automation, roadmap, or company/project context, follow `/Users/mikkel/AGENTS.md`: read `homelab/`, then `future/`, then `bitstraum/`, then other relevant folders.
+- Start from the user's Obsidian vault (path defined in `AGENTS.md`).
+- For infrastructure, servers, services, agents, automation, roadmap, or company/project context, follow the vault reading order in `AGENTS.md`: `homelab/`, then `future/`, then `bitstraum/`, then other folders.
 - Prefer specific references from existing notes over generic brainstorming.
 - If a note is missing or stale, say what is missing instead of inventing details.
 

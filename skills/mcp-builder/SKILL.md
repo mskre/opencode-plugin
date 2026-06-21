@@ -10,7 +10,7 @@ Use this skill for Model Context Protocol server work, including new servers, cl
 ## OpenCode Configuration Rules
 
 - Edit OpenCode config only in the appropriate `opencode.json` or `opencode.jsonc` file.
-- For global OpenCode MCPs, use `/Users/mikkel/.config/opencode/opencode.json`.
+- For global OpenCode MCPs, use `~/.config/opencode/opencode.json`.
 - Keep new MCP servers disabled by default unless the user explicitly asks for always-on behavior.
 - Use an object under `mcp`, keyed by server name.
 - For local servers, use `type: "local"` and `command` as an array of strings.

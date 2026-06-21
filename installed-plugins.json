@@ -20,33 +20,6 @@
       "configuredIn": "plugin"
     },
     {
-      "name": "opencode-pty",
-      "type": "local-pinned-npm",
-      "sourcePackage": "opencode-pty@0.3.4",
-      "pluginPath": "/Users/mikkel/.config/opencode/vendor/opencode-pty-pinned/node_modules/opencode-pty/dist/index.js",
-      "vendorPath": "/Users/mikkel/.config/opencode/vendor/opencode-pty-pinned",
-      "repositoryPath": "vendor/opencode-pty-pinned/package.json",
-      "repositoryLockfile": "vendor/opencode-pty-pinned/package-lock.json",
-      "pinnedDependencies": {
-        "bun-pty": "0.4.8"
-      },
-      "configuredIn": "plugin",
-      "notes": "opencode-pty@latest resolves bun-pty 0.4.10 and fails its startup guard; this local vendor install pins bun-pty to 0.4.8."
-    },
-    {
-      "name": "opencode-frontend-design",
-      "type": "npm",
-      "spec": "@bfirestone45/opencode-frontend-design@latest",
-      "configuredIn": "plugin",
-      "notes": "Adds the packaged frontend-design skill path to OpenCode."
-    },
-    {
-      "name": "opencode-skill-creator",
-      "type": "npm",
-      "spec": "opencode-skill-creator@latest",
-      "configuredIn": "plugin"
-    },
-    {
       "name": "image-downscale",
       "type": "local-auto-plugin",
       "source": "image-downscale/src/plugins/image-downscale.ts",
@@ -161,21 +134,10 @@
       "repositoryPath": "skills/cloudflare-skills/SKILL.md"
     },
     {
-      "name": "stop-slop",
-      "type": "local",
-      "path": "/Users/mikkel/.opencode/skills/stop-slop/SKILL.md",
-      "repositoryPath": "skills/stop-slop/SKILL.md"
-    },
-    {
       "name": "webapp-testing",
       "type": "local",
       "path": "/Users/mikkel/.opencode/skills/webapp-testing/SKILL.md",
       "repositoryPath": "skills/webapp-testing/SKILL.md"
-    },
-    {
-      "name": "frontend-design",
-      "type": "plugin-provided",
-      "source": "@bfirestone45/opencode-frontend-design"
     }
   ]
 }
