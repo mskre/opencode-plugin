@@ -49,7 +49,7 @@ All MCP servers are disabled by default and should be enabled only for sessions 
 
 ## Local Skills
 
-Local OpenCode skills live under `~/.opencode/skills` and are loaded through the global `skills.paths` entry.
+Local OpenCode skills are tracked in [`skills/`](./skills), installed to `~/.opencode/skills`, and loaded through the global `skills.paths` entry.
 
 - `ui-ux-pro-max`
 - `vault-daydream`
@@ -58,12 +58,55 @@ Local OpenCode skills live under `~/.opencode/skills` and are loaded through the
 - `stop-slop`
 - `webapp-testing`
 
+## Sync To A New Machine
+
+Clone this repo, then sync the tracked skills into the machine's OpenCode skill directory:
+
+```bash
+git clone git@github.com:mskre/opencode-plugin.git ~/opencode-plugin
+mkdir -p ~/.opencode/skills
+rsync -a --delete ~/opencode-plugin/skills/ ~/.opencode/skills/
+```
+
+Make sure the global OpenCode config includes an absolute `skills.paths` entry for that machine:
+
+```json
+{
+  "skills": {
+    "paths": ["/Users/mikkel/.opencode/skills"]
+  }
+}
+```
+
+For Linux servers or other usernames, replace `/Users/mikkel` with that machine's absolute home path.
+
+To install the pinned PTY plugin workaround on another machine:
+
+```bash
+mkdir -p ~/.config/opencode/vendor/opencode-pty-pinned
+rsync -a ~/opencode-plugin/vendor/opencode-pty-pinned/ ~/.config/opencode/vendor/opencode-pty-pinned/
+npm install --prefix ~/.config/opencode/vendor/opencode-pty-pinned
+```
+
+Then point the OpenCode `plugin` entry at the machine's absolute pinned plugin path:
+
+```json
+{
+  "plugin": [
+    "/Users/mikkel/.config/opencode/vendor/opencode-pty-pinned/node_modules/opencode-pty/dist/index.js"
+  ]
+}
+```
+
+Restart OpenCode after syncing skills or changing plugin config.
+
 ## Global Setup Sync
 
-This repo is the GitHub-backed record for plugins, MCP servers, and local skills installed in the global OpenCode setup.
+This repo is the GitHub-backed source for plugins, MCP servers, and local skills installed in the global OpenCode setup.
 
 - Update `installed-plugins.json` and this README whenever adding, removing, or updating a global OpenCode plugin.
 - Track global MCP and skill changes in `installed-plugins.json` when they are part of the OpenCode setup.
+- Add or update local skill source under `skills/` so the setup can be synced to other servers and laptops.
 - Verify the live config at `~/.config/opencode/opencode.json` after changes.
 - Commit and push this repo to `origin/main` so GitHub stays synced with the live setup.
 

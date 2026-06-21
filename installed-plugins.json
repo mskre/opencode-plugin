@@ -25,6 +25,8 @@
       "sourcePackage": "opencode-pty@0.3.4",
       "pluginPath": "/Users/mikkel/.config/opencode/vendor/opencode-pty-pinned/node_modules/opencode-pty/dist/index.js",
       "vendorPath": "/Users/mikkel/.config/opencode/vendor/opencode-pty-pinned",
+      "repositoryPath": "vendor/opencode-pty-pinned/package.json",
+      "repositoryLockfile": "vendor/opencode-pty-pinned/package-lock.json",
       "pinnedDependencies": {
         "bun-pty": "0.4.8"
       },
@@ -137,32 +139,38 @@
     {
       "name": "ui-ux-pro-max",
       "type": "local",
-      "path": "/Users/mikkel/.opencode/skills/ui-ux-pro-max/SKILL.md"
+      "path": "/Users/mikkel/.opencode/skills/ui-ux-pro-max/SKILL.md",
+      "repositoryPath": "skills/ui-ux-pro-max/SKILL.md"
     },
     {
       "name": "vault-daydream",
       "type": "local",
-      "path": "/Users/mikkel/.opencode/skills/vault-daydream/SKILL.md"
+      "path": "/Users/mikkel/.opencode/skills/vault-daydream/SKILL.md",
+      "repositoryPath": "skills/vault-daydream/SKILL.md"
     },
     {
       "name": "mcp-builder",
       "type": "local",
-      "path": "/Users/mikkel/.opencode/skills/mcp-builder/SKILL.md"
+      "path": "/Users/mikkel/.opencode/skills/mcp-builder/SKILL.md",
+      "repositoryPath": "skills/mcp-builder/SKILL.md"
     },
     {
       "name": "cloudflare-skills",
       "type": "local",
-      "path": "/Users/mikkel/.opencode/skills/cloudflare-skills/SKILL.md"
+      "path": "/Users/mikkel/.opencode/skills/cloudflare-skills/SKILL.md",
+      "repositoryPath": "skills/cloudflare-skills/SKILL.md"
     },
     {
       "name": "stop-slop",
       "type": "local",
-      "path": "/Users/mikkel/.opencode/skills/stop-slop/SKILL.md"
+      "path": "/Users/mikkel/.opencode/skills/stop-slop/SKILL.md",
+      "repositoryPath": "skills/stop-slop/SKILL.md"
     },
     {
       "name": "webapp-testing",
       "type": "local",
-      "path": "/Users/mikkel/.opencode/skills/webapp-testing/SKILL.md"
+      "path": "/Users/mikkel/.opencode/skills/webapp-testing/SKILL.md",
+      "repositoryPath": "skills/webapp-testing/SKILL.md"
     },
     {
       "name": "frontend-design",
