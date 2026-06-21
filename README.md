@@ -1,6 +1,6 @@
 # OpenCode Plugins
 
-A collection of local plugins for [OpenCode](https://opencode.ai).
+A collection of local plugins and install tracking for my global [OpenCode](https://opencode.ai) setup.
 
 > **Tip:** Using an AI coding assistant? Skip to the [LLM Install](#llm-install) section and paste the instructions directly into your assistant for automated setup.
 
@@ -12,7 +12,23 @@ Automatically downscales oversized uploaded images so the longest side is at mos
 
 **Supported formats:** PNG, JPEG, WebP, GIF (static only), AVIF, TIFF
 
-## Installation
+### [ponytail](https://github.com/DietrichGebert/ponytail)
+
+External checkout that injects the Ponytail lazy senior developer ruleset into OpenCode every turn and provides `/ponytail` level commands.
+
+**Checkout:** `~/.config/opencode/vendor/ponytail`
+**Plugin path:** `~/.config/opencode/vendor/ponytail/.opencode/plugins/ponytail.mjs`
+**Commands:** symlinked into `~/.config/opencode/command/`
+
+## Global Setup Sync
+
+This repo is the GitHub-backed record for plugins installed in `~/.config/opencode`.
+
+- Update `installed-plugins.json` and this README whenever adding, removing, or updating a global OpenCode plugin.
+- Verify the live config at `~/.config/opencode/opencode.json` after changes.
+- Commit and push this repo to `origin/main` so GitHub stays synced with the live setup.
+
+## image-downscale Installation
 
 1. Copy the plugin source files into your OpenCode global config:
 
@@ -33,6 +49,26 @@ bun add sharp
 ```
 
 3. Restart OpenCode. The plugin loads automatically from `~/.config/opencode/plugins/`.
+
+## Ponytail Installation
+
+```bash
+git clone https://github.com/DietrichGebert/ponytail.git ~/.config/opencode/vendor/ponytail
+mkdir -p ~/.config/opencode/command
+ln -sf ~/.config/opencode/vendor/ponytail/.opencode/command/* ~/.config/opencode/command/
+```
+
+Add the absolute plugin path to `~/.config/opencode/opencode.json`:
+
+```json
+{
+  "plugin": [
+    "/Users/mikkel/.config/opencode/vendor/ponytail/.opencode/plugins/ponytail.mjs"
+  ]
+}
+```
+
+Restart OpenCode after installing or updating Ponytail.
 
 ## Running Tests
 

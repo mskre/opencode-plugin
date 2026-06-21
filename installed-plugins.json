@@ -1,0 +1,36 @@
+{
+  "globalConfig": "/Users/mikkel/.config/opencode/opencode.json",
+  "plugins": [
+    {
+      "name": "opencode-claude-auth",
+      "type": "npm",
+      "spec": "opencode-claude-auth@latest",
+      "configuredIn": "plugin"
+    },
+    {
+      "name": "opencode-notifier",
+      "type": "npm",
+      "spec": "@mohak34/opencode-notifier@latest",
+      "configuredIn": "plugin"
+    },
+    {
+      "name": "image-downscale",
+      "type": "local-auto-plugin",
+      "source": "image-downscale/src/plugins/image-downscale.ts",
+      "installedPluginPath": "/Users/mikkel/.config/opencode/plugins/image-downscale.ts",
+      "installedHelperPath": "/Users/mikkel/.config/opencode/lib/image-downscale.ts",
+      "dependency": "sharp"
+    },
+    {
+      "name": "ponytail",
+      "type": "external-checkout",
+      "source": "https://github.com/DietrichGebert/ponytail",
+      "checkout": "/Users/mikkel/.config/opencode/vendor/ponytail",
+      "pluginPath": "/Users/mikkel/.config/opencode/vendor/ponytail/.opencode/plugins/ponytail.mjs",
+      "commandsSource": "/Users/mikkel/.config/opencode/vendor/ponytail/.opencode/command",
+      "commandsPath": "/Users/mikkel/.config/opencode/command",
+      "levels": ["lite", "full", "ultra", "off"],
+      "stateFile": "/Users/mikkel/.config/opencode/.ponytail-active"
+    }
+  ]
+}
