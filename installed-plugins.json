@@ -20,6 +20,14 @@
       "configuredIn": "plugin"
     },
     {
+      "name": "opencode-goal-plugin",
+      "type": "npm",
+      "spec": "opencode-goal-plugin@latest",
+      "configuredIn": "plugin",
+      "command": "goal",
+      "dependency": "opencode-goal-plugin"
+    },
+    {
       "name": "image-downscale",
       "type": "local-auto-plugin",
       "source": "image-downscale/src/plugins/image-downscale.ts",
@@ -110,16 +118,100 @@
   ],
   "skills": [
     {
-      "name": "ui-ux-pro-max",
+      "name": "brandkit",
       "type": "local",
-      "path": "/Users/mikkel/.opencode/skills/ui-ux-pro-max/SKILL.md",
-      "repositoryPath": "skills/ui-ux-pro-max/SKILL.md"
+      "path": "/Users/mikkel/.opencode/skills/brandkit/SKILL.md",
+      "repositoryPath": "skills/brandkit/SKILL.md",
+      "source": "https://github.com/Leonxlnx/taste-skill"
     },
     {
-      "name": "vault-daydream",
+      "name": "cloudflare-skills",
       "type": "local",
-      "path": "/Users/mikkel/.opencode/skills/vault-daydream/SKILL.md",
-      "repositoryPath": "skills/vault-daydream/SKILL.md"
+      "path": "/Users/mikkel/.opencode/skills/cloudflare-skills/SKILL.md",
+      "repositoryPath": "skills/cloudflare-skills/SKILL.md"
+    },
+    {
+      "name": "design-taste-frontend",
+      "type": "local",
+      "path": "/Users/mikkel/.opencode/skills/design-taste-frontend/SKILL.md",
+      "repositoryPath": "skills/design-taste-frontend/SKILL.md",
+      "source": "https://github.com/Leonxlnx/taste-skill"
+    },
+    {
+      "name": "design-taste-frontend-v1",
+      "type": "local",
+      "path": "/Users/mikkel/.opencode/skills/design-taste-frontend-v1/SKILL.md",
+      "repositoryPath": "skills/design-taste-frontend-v1/SKILL.md",
+      "source": "https://github.com/Leonxlnx/taste-skill"
+    },
+    {
+      "name": "emil-design-eng",
+      "type": "local",
+      "path": "/Users/mikkel/.opencode/skills/emil-design-eng/SKILL.md",
+      "repositoryPath": "skills/emil-design-eng/SKILL.md",
+      "source": "https://github.com/emilkowalski/skills"
+    },
+    {
+      "name": "frontend-iteration",
+      "type": "local",
+      "path": "/Users/mikkel/.opencode/skills/frontend-iteration/SKILL.md",
+      "repositoryPath": "skills/frontend-iteration/SKILL.md"
+    },
+    {
+      "name": "full-output-enforcement",
+      "type": "local",
+      "path": "/Users/mikkel/.opencode/skills/full-output-enforcement/SKILL.md",
+      "repositoryPath": "skills/full-output-enforcement/SKILL.md",
+      "source": "https://github.com/Leonxlnx/taste-skill"
+    },
+    {
+      "name": "gpt-taste",
+      "type": "local",
+      "path": "/Users/mikkel/.opencode/skills/gpt-taste/SKILL.md",
+      "repositoryPath": "skills/gpt-taste/SKILL.md",
+      "source": "https://github.com/Leonxlnx/taste-skill"
+    },
+    {
+      "name": "high-end-visual-design",
+      "type": "local",
+      "path": "/Users/mikkel/.opencode/skills/high-end-visual-design/SKILL.md",
+      "repositoryPath": "skills/high-end-visual-design/SKILL.md",
+      "source": "https://github.com/Leonxlnx/taste-skill"
+    },
+    {
+      "name": "image-to-code",
+      "type": "local",
+      "path": "/Users/mikkel/.opencode/skills/image-to-code/SKILL.md",
+      "repositoryPath": "skills/image-to-code/SKILL.md",
+      "source": "https://github.com/Leonxlnx/taste-skill"
+    },
+    {
+      "name": "imagegen-frontend-mobile",
+      "type": "local",
+      "path": "/Users/mikkel/.opencode/skills/imagegen-frontend-mobile/SKILL.md",
+      "repositoryPath": "skills/imagegen-frontend-mobile/SKILL.md",
+      "source": "https://github.com/Leonxlnx/taste-skill"
+    },
+    {
+      "name": "imagegen-frontend-web",
+      "type": "local",
+      "path": "/Users/mikkel/.opencode/skills/imagegen-frontend-web/SKILL.md",
+      "repositoryPath": "skills/imagegen-frontend-web/SKILL.md",
+      "source": "https://github.com/Leonxlnx/taste-skill"
+    },
+    {
+      "name": "impeccable",
+      "type": "local",
+      "path": "/Users/mikkel/.opencode/skills/impeccable/SKILL.md",
+      "repositoryPath": "skills/impeccable/SKILL.md",
+      "source": "https://github.com/pbakaus/impeccable"
+    },
+    {
+      "name": "industrial-brutalist-ui",
+      "type": "local",
+      "path": "/Users/mikkel/.opencode/skills/industrial-brutalist-ui/SKILL.md",
+      "repositoryPath": "skills/industrial-brutalist-ui/SKILL.md",
+      "source": "https://github.com/Leonxlnx/taste-skill"
     },
     {
       "name": "mcp-builder",
@@ -128,10 +220,38 @@
       "repositoryPath": "skills/mcp-builder/SKILL.md"
     },
     {
-      "name": "cloudflare-skills",
+      "name": "minimalist-ui",
       "type": "local",
-      "path": "/Users/mikkel/.opencode/skills/cloudflare-skills/SKILL.md",
-      "repositoryPath": "skills/cloudflare-skills/SKILL.md"
+      "path": "/Users/mikkel/.opencode/skills/minimalist-ui/SKILL.md",
+      "repositoryPath": "skills/minimalist-ui/SKILL.md",
+      "source": "https://github.com/Leonxlnx/taste-skill"
+    },
+    {
+      "name": "redesign-existing-projects",
+      "type": "local",
+      "path": "/Users/mikkel/.opencode/skills/redesign-existing-projects/SKILL.md",
+      "repositoryPath": "skills/redesign-existing-projects/SKILL.md",
+      "source": "https://github.com/Leonxlnx/taste-skill"
+    },
+    {
+      "name": "review-animations",
+      "type": "local",
+      "path": "/Users/mikkel/.opencode/skills/review-animations/SKILL.md",
+      "repositoryPath": "skills/review-animations/SKILL.md",
+      "source": "https://github.com/emilkowalski/skills"
+    },
+    {
+      "name": "stitch-design-taste",
+      "type": "local",
+      "path": "/Users/mikkel/.opencode/skills/stitch-design-taste/SKILL.md",
+      "repositoryPath": "skills/stitch-design-taste/SKILL.md",
+      "source": "https://github.com/Leonxlnx/taste-skill"
+    },
+    {
+      "name": "vault-daydream",
+      "type": "local",
+      "path": "/Users/mikkel/.opencode/skills/vault-daydream/SKILL.md",
+      "repositoryPath": "skills/vault-daydream/SKILL.md"
     },
     {
       "name": "webapp-testing",

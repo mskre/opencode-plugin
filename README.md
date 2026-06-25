@@ -23,6 +23,7 @@ External checkout that injects the Ponytail lazy senior developer ruleset into O
 ### Other global plugins
 
 - `@nick-vi/opencode-type-inject@latest` for direct type injection support.
+- `opencode-goal-plugin@latest` for the `/goal` session objective and auto-continue workflow.
 
 ## MCP Servers
 
@@ -30,20 +31,36 @@ All MCP servers are disabled by default and should be enabled only for sessions 
 
 - `playwright` via `@playwright/mcp`
 - `chrome-devtools` via `chrome-devtools-mcp@latest` with `--isolated`, `--no-usage-statistics`, and `--no-performance-crux`
-- `context7` via `@upstash/context7-mcp@latest`
+- `context7` via `@upstash/context7-mcp@latest` for current library/framework docs
 - `magic-ui` via `@magicuidesign/mcp@latest`
 - `shadcn` via `shadcn@latest mcp`
-- `accessibility-scanner` via `mcp-accessibility-scanner@latest`
+- `accessibility-scanner` via `mcp-accessibility-scanner@latest` for automated accessibility checks
 - Existing disabled servers: `mobbin`, `mobile-mcp`, `n8n`, `google-scholar`, and `trogon`
 
 ## Local Skills
 
 Local OpenCode skills are tracked in [`skills/`](./skills), installed to `~/.opencode/skills`, and loaded through the global `skills.paths` entry.
 
-- `ui-ux-pro-max`
-- `vault-daydream`
-- `mcp-builder`
+- `brandkit`
 - `cloudflare-skills`
+- `design-taste-frontend`
+- `design-taste-frontend-v1`
+- `emil-design-eng`
+- `frontend-iteration`
+- `full-output-enforcement`
+- `gpt-taste`
+- `high-end-visual-design`
+- `image-to-code`
+- `imagegen-frontend-mobile`
+- `imagegen-frontend-web`
+- `impeccable`
+- `industrial-brutalist-ui`
+- `mcp-builder`
+- `minimalist-ui`
+- `redesign-existing-projects`
+- `review-animations`
+- `stitch-design-taste`
+- `vault-daydream`
 - `webapp-testing`
 
 ## Sync To A New Machine
