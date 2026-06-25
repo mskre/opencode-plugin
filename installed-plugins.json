@@ -227,6 +227,13 @@
       "source": "https://github.com/Leonxlnx/taste-skill"
     },
     {
+      "name": "phantom-ui",
+      "type": "local",
+      "path": "/Users/mikkel/.opencode/skills/phantom-ui/SKILL.md",
+      "repositoryPath": "skills/phantom-ui/SKILL.md",
+      "source": "https://github.com/Aejkatappaja/phantom-ui"
+    },
+    {
       "name": "redesign-existing-projects",
       "type": "local",
       "path": "/Users/mikkel/.opencode/skills/redesign-existing-projects/SKILL.md",

@@ -57,6 +57,7 @@ Local OpenCode skills are tracked in [`skills/`](./skills), installed to `~/.ope
 - `industrial-brutalist-ui`
 - `mcp-builder`
 - `minimalist-ui`
+- `phantom-ui`
 - `redesign-existing-projects`
 - `review-animations`
 - `stitch-design-taste`
