@@ -39,7 +39,7 @@ All MCP servers are disabled by default and should be enabled only for sessions 
 
 ## Local Skills
 
-Local OpenCode skills are tracked in [`skills/`](./skills), installed to `~/.opencode/skills`, and loaded through the global `skills.paths` entry.
+Local OpenCode skills are tracked in [`skills/`](./skills), installed to `~/.opencode/skills`, and loaded through the global `skills.paths` entry. Claude-compatible skills may also be installed to `~/.claude/skills`, which OpenCode auto-loads.
 
 - `brandkit`
 - `cloudflare-skills`
@@ -58,6 +58,7 @@ Local OpenCode skills are tracked in [`skills/`](./skills), installed to `~/.ope
 - `mcp-builder`
 - `minimalist-ui`
 - `phantom-ui`
+- `playwright-cli` installed at `~/.claude/skills/playwright-cli`
 - `redesign-existing-projects`
 - `review-animations`
 - `stitch-design-taste`

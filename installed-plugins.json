@@ -234,6 +234,14 @@
       "source": "https://github.com/Aejkatappaja/phantom-ui"
     },
     {
+      "name": "playwright-cli",
+      "type": "external-claude-skill",
+      "path": "/Users/mikkel/.claude/skills/playwright-cli/SKILL.md",
+      "repositoryPath": "skills/playwright-cli/SKILL.md",
+      "source": "https://github.com/microsoft/playwright-cli",
+      "dependency": "@playwright/cli@latest"
+    },
+    {
       "name": "redesign-existing-projects",
       "type": "local",
       "path": "/Users/mikkel/.opencode/skills/redesign-existing-projects/SKILL.md",
