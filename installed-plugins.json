@@ -204,7 +204,8 @@
       "type": "local",
       "path": "/Users/mikkel/.opencode/skills/impeccable/SKILL.md",
       "repositoryPath": "skills/impeccable/SKILL.md",
-      "source": "https://github.com/pbakaus/impeccable"
+      "source": "https://github.com/pbakaus/impeccable",
+      "version": "3.9.1"
     },
     {
       "name": "industrial-brutalist-ui",

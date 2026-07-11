@@ -53,7 +53,7 @@ Local OpenCode skills are tracked in [`skills/`](./skills), installed to `~/.ope
 - `image-to-code`
 - `imagegen-frontend-mobile`
 - `imagegen-frontend-web`
-- `impeccable`
+- `impeccable` v3.9.1 from `pbakaus/impeccable`
 - `industrial-brutalist-ui`
 - `mcp-builder`
 - `minimalist-ui`
