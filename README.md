@@ -65,6 +65,8 @@ Local OpenCode skills are tracked in [`skills/`](./skills), installed to `~/.ope
 - `vault-daydream`
 - `webapp-testing`
 
+`/impeccable` is exposed through `command/impeccable.md`; the wrapper loads the skill and forwards its arguments.
+
 ## Sync To A New Machine
 
 Clone this repo, then sync the tracked skills into the machine's OpenCode skill directory:
