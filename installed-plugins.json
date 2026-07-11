@@ -28,6 +28,14 @@
       "dependency": "opencode-goal-plugin"
     },
     {
+      "name": "magic-compact",
+      "type": "npm",
+      "spec": "magic-compact",
+      "version": "1.1.0",
+      "configuredIn": ["plugin", "/Users/mikkel/.config/opencode/tui.json"],
+      "commands": ["magic-compact", "magic-stats"]
+    },
+    {
       "name": "image-downscale",
       "type": "local-auto-plugin",
       "source": "image-downscale/src/plugins/image-downscale.ts",

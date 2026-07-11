@@ -24,6 +24,7 @@ External checkout that injects the Ponytail lazy senior developer ruleset into O
 
 - `@nick-vi/opencode-type-inject@latest` for direct type injection support.
 - `opencode-goal-plugin@latest` for the `/goal` session objective and auto-continue workflow.
+- `magic-compact` v1.1.0 for lossless manual context compression via `/magic-compact`; `/magic-stats` reports token and cost savings.
 
 ## MCP Servers
 
