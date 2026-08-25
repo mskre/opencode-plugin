@@ -44,8 +44,10 @@ Local OpenCode skills are tracked in [`skills/`](./skills), installed to `~/.ope
 
 - `brandkit`
 - `cloudflare-skills`
+- `diagnosing-bugs`, adapted from `mattpocock/skills` for hard bugs only
 - `emil-design-eng`
 - `frontend-iteration`
+- `grill-me` and its `grilling` workflow, adapted from `mattpocock/skills`
 - `image-to-code`
 - `imagegen-frontend-mobile`
 - `imagegen-frontend-web`
@@ -57,9 +59,13 @@ Local OpenCode skills are tracked in [`skills/`](./skills), installed to `~/.ope
 - `playwright-cli` installed at `~/.claude/skills/playwright-cli`
 - `review-animations`
 - `stitch-design-taste`
+- `tdd`, adapted from `mattpocock/skills` for explicit test-first requests
 - `vault-daydream`
+- `wizard`, adapted from `mattpocock/skills` for manual setup procedures
 
 `/impeccable` is exposed through `command/impeccable.md`; the wrapper loads the skill and forwards its arguments.
+
+`/grill-me` is exposed through `command/grill-me.md`; it loads the explicitly invoked grilling workflow.
 
 `impeccable` is the general frontend design skill. `minimalist-ui` and `industrial-brutalist-ui` are explicit aesthetic modes. Image-generation skills check for a real image-generation tool and stop without fabricating output when the current harness lacks one.
 
@@ -72,6 +78,8 @@ git clone git@github.com:mskre/opencode-plugin.git ~/opencode-plugin
 mkdir -p ~/.opencode/skills
 rsync -a --delete --exclude '/playwright-cli/' ~/opencode-plugin/skills/ ~/.opencode/skills/
 rsync -a ~/opencode-plugin/skills/playwright-cli/ ~/.claude/skills/playwright-cli/
+mkdir -p ~/.config/opencode/command
+rsync -a ~/opencode-plugin/command/ ~/.config/opencode/command/
 ```
 
 Make sure the global OpenCode config includes an absolute `skills.paths` entry for that machine:
