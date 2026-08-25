@@ -36,7 +36,7 @@ All MCP servers are disabled by default and should be enabled only for sessions 
 - `magic-ui` via `@magicuidesign/mcp@latest`
 - `shadcn` via `shadcn@latest mcp`
 - `accessibility-scanner` via `mcp-accessibility-scanner@latest` for automated accessibility checks
-- Existing disabled servers: `mobbin`, `mobile-mcp`, `n8n`, `google-scholar`, and `trogon`
+- Existing disabled servers: `mobbin`, `mobile-mcp`, `n8n`, `google-scholar`, `trogon`, `supabase-cloud`, and the private self-hosted `supabase` endpoint
 
 ## Local Skills
 
@@ -44,13 +44,8 @@ Local OpenCode skills are tracked in [`skills/`](./skills), installed to `~/.ope
 
 - `brandkit`
 - `cloudflare-skills`
-- `design-taste-frontend`
-- `design-taste-frontend-v1`
 - `emil-design-eng`
 - `frontend-iteration`
-- `full-output-enforcement`
-- `gpt-taste`
-- `high-end-visual-design`
 - `image-to-code`
 - `imagegen-frontend-mobile`
 - `imagegen-frontend-web`
@@ -60,13 +55,13 @@ Local OpenCode skills are tracked in [`skills/`](./skills), installed to `~/.ope
 - `minimalist-ui`
 - `phantom-ui`
 - `playwright-cli` installed at `~/.claude/skills/playwright-cli`
-- `redesign-existing-projects`
 - `review-animations`
 - `stitch-design-taste`
 - `vault-daydream`
-- `webapp-testing`
 
 `/impeccable` is exposed through `command/impeccable.md`; the wrapper loads the skill and forwards its arguments.
+
+`impeccable` is the general frontend design skill. `minimalist-ui` and `industrial-brutalist-ui` are explicit aesthetic modes. Image-generation skills check for a real image-generation tool and stop without fabricating output when the current harness lacks one.
 
 ## Sync To A New Machine
 
@@ -75,7 +70,8 @@ Clone this repo, then sync the tracked skills into the machine's OpenCode skill 
 ```bash
 git clone git@github.com:mskre/opencode-plugin.git ~/opencode-plugin
 mkdir -p ~/.opencode/skills
-rsync -a --delete ~/opencode-plugin/skills/ ~/.opencode/skills/
+rsync -a --delete --exclude '/playwright-cli/' ~/opencode-plugin/skills/ ~/.opencode/skills/
+rsync -a ~/opencode-plugin/skills/playwright-cli/ ~/.claude/skills/playwright-cli/
 ```
 
 Make sure the global OpenCode config includes an absolute `skills.paths` entry for that machine:

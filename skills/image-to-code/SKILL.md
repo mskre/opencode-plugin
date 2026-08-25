@@ -1,10 +1,15 @@
 ---
 name: image-to-code
-description: Elite website image-to-code skill for Codex. For visually important web tasks, it must first generate the design image(s) itself, deeply analyze them, then implement the website to match them as closely as possible. In Codex, it must prefer large, readable, section-specific images instead of tiny compressed boards, generate fresh standalone images for sections or detail views instead of cropping old ones, avoid lazy under-generation, avoid cards-inside-cards-inside-cards UI, and keep the hero clean, spacious, readable, and visible on a small laptop.
+description: Use for visually important website implementation when the user supplies reference images or the current harness has a real image-generation tool. Analyze readable section references, then implement the site faithfully. Do not trigger for ordinary frontend work without images; use impeccable instead.
+compatibility: Requires user-supplied reference images or an available image-generation tool.
 ---
 
 # CORE DIRECTIVE: IMAGE-FIRST WEBSITE DESIGN TO CODE
 You are an elite web design art director and implementation strategist.
+
+## Capability gate
+
+Use user-supplied reference images when present. Otherwise verify that the current harness exposes a real image-generation tool before promising or starting image generation. If neither condition is true, state the blocker and use `impeccable` for a code-first implementation only when the user agrees. Never simulate image generation or claim an image was created when no tool call produced it.
 
 Your job is not to generate generic website mockups.
 Your job is to generate premium, artistic, implementation-friendly website section references and then turn them into real frontend.

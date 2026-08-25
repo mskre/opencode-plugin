@@ -122,6 +122,18 @@
       "type": "local",
       "command": "npx tsx /Users/mikkel/trogon/packages/mcp-server/src/index.ts --server-url wss://trogon.bitstraum.no/yjs --api-base https://trogon.bitstraum.no/api --agent-name OpenCode",
       "enabledByDefault": false
+    },
+    {
+      "name": "supabase-cloud",
+      "type": "remote",
+      "url": "https://mcp.supabase.com/mcp?project_ref=oejlviuxdijglkuohagg",
+      "enabledByDefault": false
+    },
+    {
+      "name": "supabase",
+      "type": "remote",
+      "url": "http://127.0.0.1:15434/api/mcp",
+      "enabledByDefault": false
     }
   ],
   "skills": [
@@ -139,20 +151,6 @@
       "repositoryPath": "skills/cloudflare-skills/SKILL.md"
     },
     {
-      "name": "design-taste-frontend",
-      "type": "local",
-      "path": "/Users/mikkel/.opencode/skills/design-taste-frontend/SKILL.md",
-      "repositoryPath": "skills/design-taste-frontend/SKILL.md",
-      "source": "https://github.com/Leonxlnx/taste-skill"
-    },
-    {
-      "name": "design-taste-frontend-v1",
-      "type": "local",
-      "path": "/Users/mikkel/.opencode/skills/design-taste-frontend-v1/SKILL.md",
-      "repositoryPath": "skills/design-taste-frontend-v1/SKILL.md",
-      "source": "https://github.com/Leonxlnx/taste-skill"
-    },
-    {
       "name": "emil-design-eng",
       "type": "local",
       "path": "/Users/mikkel/.opencode/skills/emil-design-eng/SKILL.md",
@@ -164,27 +162,6 @@
       "type": "local",
       "path": "/Users/mikkel/.opencode/skills/frontend-iteration/SKILL.md",
       "repositoryPath": "skills/frontend-iteration/SKILL.md"
-    },
-    {
-      "name": "full-output-enforcement",
-      "type": "local",
-      "path": "/Users/mikkel/.opencode/skills/full-output-enforcement/SKILL.md",
-      "repositoryPath": "skills/full-output-enforcement/SKILL.md",
-      "source": "https://github.com/Leonxlnx/taste-skill"
-    },
-    {
-      "name": "gpt-taste",
-      "type": "local",
-      "path": "/Users/mikkel/.opencode/skills/gpt-taste/SKILL.md",
-      "repositoryPath": "skills/gpt-taste/SKILL.md",
-      "source": "https://github.com/Leonxlnx/taste-skill"
-    },
-    {
-      "name": "high-end-visual-design",
-      "type": "local",
-      "path": "/Users/mikkel/.opencode/skills/high-end-visual-design/SKILL.md",
-      "repositoryPath": "skills/high-end-visual-design/SKILL.md",
-      "source": "https://github.com/Leonxlnx/taste-skill"
     },
     {
       "name": "image-to-code",
@@ -252,13 +229,6 @@
       "dependency": "@playwright/cli@latest"
     },
     {
-      "name": "redesign-existing-projects",
-      "type": "local",
-      "path": "/Users/mikkel/.opencode/skills/redesign-existing-projects/SKILL.md",
-      "repositoryPath": "skills/redesign-existing-projects/SKILL.md",
-      "source": "https://github.com/Leonxlnx/taste-skill"
-    },
-    {
       "name": "review-animations",
       "type": "local",
       "path": "/Users/mikkel/.opencode/skills/review-animations/SKILL.md",
@@ -277,12 +247,6 @@
       "type": "local",
       "path": "/Users/mikkel/.opencode/skills/vault-daydream/SKILL.md",
       "repositoryPath": "skills/vault-daydream/SKILL.md"
-    },
-    {
-      "name": "webapp-testing",
-      "type": "local",
-      "path": "/Users/mikkel/.opencode/skills/webapp-testing/SKILL.md",
-      "repositoryPath": "skills/webapp-testing/SKILL.md"
     }
   ]
 }

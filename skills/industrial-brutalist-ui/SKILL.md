@@ -1,6 +1,6 @@
 ---
 name: industrial-brutalist-ui
-description: Raw mechanical interfaces fusing Swiss typographic print with military terminal aesthetics. Rigid grids, extreme type scale contrast, utilitarian color, analog degradation effects. For data-heavy dashboards, portfolios, or editorial sites that need to feel like declassified blueprints.
+description: Use only when the user explicitly requests industrial-brutalist-ui, Swiss industrial print, or tactical terminal aesthetics. Applies rigid grids, strong type contrast, utilitarian color, and restrained analog texture.
 ---
 
 # SKILL: Industrial Brutalism & Tactical Telemetry UI
@@ -76,15 +76,15 @@ Standard web UI conventions are replaced with utilitarian, industrial graphic el
 *   **Syntax Decoration:** Utilization of ASCII characters to frame data points.
     *   *Framing:* `[ DELIVERY SYSTEMS ]`, `< RE-IND >`
     *   *Directional:* `>>>`, `///`, `\\\\`
-*   **Industrial Markers:** Prominent integration of registration (`®`), copyright (`©`), and trademark (`™`) symbols functioning as structural geometric elements rather than legal text.
-*   **Technical Assets:** Integration of crosshairs (`+`) at grid intersections, repeating vertical lines (barcodes), thick horizontal warning stripes, and randomized string data (e.g., `REV 2.6`, `UNIT / D-01`) to simulate active mechanical processes.
+*   **Industrial Markers:** Use crosshairs, registration marks, barcodes, and warning stripes as restrained decorative geometry. Do not use legal symbols as decoration.
+*   **Technical Assets:** Use real project data or clearly labeled fixtures. Never invent plausible operational identifiers or status data that could ship as fact.
 
 ## 7. Textural and Post-Processing Effects
 To prevent the design from appearing purely digital, simulated analog degradation is engineered into the frontend via CSS and SVG filters.
 
 *   **Halftone and 1-Bit Dithering:** Transforming continuous-tone images or large serif typography into dot-matrix patterns. Achieved via pre-processing or CSS `mix-blend-mode: multiply` overlays combined with SVG radial dot patterns.
 *   **CRT Scanlines:** For terminal interfaces, applying a `repeating-linear-gradient` to the background to simulate horizontal electron beam sweeps (e.g., `repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.1) 2px, rgba(0,0,0,0.1) 4px)`).
-*   **Mechanical Noise:** A global, low-opacity SVG static/noise filter applied to the DOM root to introduce a unified physical grain across both dark and light modes.
+*   **Mechanical Noise:** If needed, use one low-opacity fixed pseudo-element with `pointer-events: none`; do not filter the DOM root or scrolling content.
 
 ## 8. Web Engineering Directives
 1.  **Grid Determinism:** Utilize `display: grid; gap: 1px;` with contrasting parent/child background colors to generate mathematically perfect, razor-thin dividing lines without complex border declarations.

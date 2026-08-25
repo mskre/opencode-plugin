@@ -23,17 +23,17 @@ Changing how an existing site looks. Two ways it goes wrong: replacing a look th
 
 ## 3. Screenshot harness (this machine)
 
-The MCP Playwright / Accessibility-scanner browser tools are pinned to channel `chrome`, which is not installed here. Don't fight them — drive the bundled Chromium directly.
+Use the available browser-testing skill or MCP first. If those tools are unavailable, run the bundled Chromium harness by its loaded skill path.
 
 ```
-node scripts/shot.mjs <url> [outDir] [locales] [widths]
+node <skill-base-dir>/scripts/shot.mjs <url> [outDir] [locales] [widths]
 # mobile + desktop, both locales:
-node scripts/shot.mjs http://localhost:3939 /tmp/shots nb-NO,en-US 360,390,1440
+node <skill-base-dir>/scripts/shot.mjs http://localhost:3939 /tmp/shots nb-NO,en-US 360,390,1440
 ```
 
-`scripts/shot.mjs` self-locates the Chromium-for-Testing binary (`~/Library/Caches/ms-playwright/chromium-*/`) and a `playwright` module (`~/.npm/_npx/*/node_modules`), forces each locale, scroll-triggers reveals, and writes `<locale>-<width>.png`.
+The harness sets the browser locale, scroll-triggers reveals, and writes `<locale>-<width>.png`. Apps that choose locale from the route, cookie, or account state need a separate URL or setup step for each locale.
 
-Contrast / a11y: `@axe-core/playwright` also lives under `~/.npm/_npx/*/node_modules`. Run it after scroll-triggering and aim for zero `color-contrast` violations.
+Run the project's existing accessibility check when available. Do not claim an axe result from this screenshot harness; it captures images only.
 
 ## 4. Stack gotchas (Next.js + Tailwind + framer-motion)
 
@@ -44,4 +44,4 @@ Contrast / a11y: `@axe-core/playwright` also lives under `~/.npm/_npx/*/node_mod
 
 ## 5. Report
 
-State the smallest-diff summary, the exact viewport × locale matrix you verified, the axe result, and that nothing was committed unless asked.
+State the smallest-diff summary, the exact viewport x locale matrix verified, any accessibility check actually run, and that nothing was committed unless asked.

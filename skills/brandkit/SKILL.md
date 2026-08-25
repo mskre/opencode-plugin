@@ -1,7 +1,12 @@
 ---
 name: brandkit
-description: Premium brand-kit image generation skill for creating high-end brand-guidelines boards, logo systems, identity decks, and visual-world presentations. Trained for minimalist, cinematic, editorial, dark-tech, luxury, cultural, security, gaming, developer-tool, and consumer-app brand systems. Optimized for intentional logo concepting, refined composition, sparse typography, strong symbolic meaning, premium mockups, art-directed imagery, and flexible grid layouts.
+description: Use only to generate brand-guideline boards or identity presentation images when the current harness exposes a real image-generation tool. Produces visual concepts, not trademark clearance or proof of uniqueness.
+compatibility: Requires an available image-generation tool; this skill does not create images through text alone.
 ---
+
+# CAPABILITY GATE
+
+Verify that a real image-generation tool is available before planning output. If it is unavailable, state that the task cannot run in the current harness. Do not simulate image calls or claim generated files exist. Describe concepts as visual directions, not as legally ownable marks; trademark clearance requires separate research.
 
 # BRANDKIT IMAGE GENERATION SKILL
 
@@ -66,7 +71,7 @@ Every generated board must answer:
 2. What is the core metaphor?
 3. How does the logo express that?
 4. How does the system scale across UI, print, image, and detail?
-5. Why does the whole thing feel ownable?
+5. Why does the system feel distinctive within the supplied category context?
 
 ---
 
