@@ -1,6 +1,6 @@
 ---
 name: wizard
-description: Use when a human must perform manual provisioning, credential setup, dashboard configuration, migration, or cutover steps that the agent cannot perform. Generates an interactive Bash wizard.
+description: Use for multi-step provisioning or cutovers requiring human dashboard or credential actions; generates an interactive Bash wizard.
 license: MIT
 metadata:
   source: https://github.com/mattpocock/skills
@@ -9,13 +9,13 @@ metadata:
 
 # Wizard
 
-Generate an interactive Bash script for a manual procedure that would otherwise require repeatedly explaining browser and credential steps. Do not invoke this when the agent can perform the work directly.
+Generate a wizard when repeated manual steps warrant one. For a single manual action, give direct instructions; perform work directly when authorized and available.
 
 ## Scope
 
-Read the repository first. For setup work, inspect environment examples, documentation, deployment configuration, and CI references to secrets or variables. For migrations, establish current state, target state, and irreversible actions.
+Inspect relevant setup documentation, environment examples, deployment configuration, and CI references when present; a repository is not required. For migrations, establish current state, target state, and irreversible actions.
 
-Identify each stage, the value it produces, where that value is stored, and whether it is secret. Ask for confirmation only when stage order or an irreversible choice is ambiguous.
+Identify each stage, its output, destination, and secrecy. Resolve ambiguous stage ordering; require explicit confirmation before irreversible actions even when the plan is clear.
 
 ## Author
 
@@ -27,7 +27,7 @@ Copy `template.sh` to the target path and replace only the example below its `ST
 - `set_secret` or `set_var` only when CI references that value.
 - `confirm` immediately before irreversible actions.
 
-Wizards are temporary by default. Commit one only when it is a repeatable setup path the repository should retain.
+Keep credentials out of logs, shell tracing, and committed files; use restrictive permissions for secret-bearing local files. Wizards are temporary by default. Retain repeatable setup scripts when useful, but commit only when requested.
 
 ## Verify
 

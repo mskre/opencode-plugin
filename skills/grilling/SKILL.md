@@ -1,6 +1,6 @@
 ---
 name: grilling
-description: Use ONLY when the user explicitly asks to be grilled, interrogated, or have a plan stress-tested. Interviews them through a dependency-ordered decision tree.
+description: Use only for an explicit grilling, interrogation, or plan stress-test request; resolves dependent decisions in rounds.
 license: MIT
 metadata:
   source: https://github.com/mattpocock/skills
@@ -11,8 +11,8 @@ metadata:
 
 Interview the user until the plan's meaningful decisions and edge cases are explicit. Map the topic as a decision tree: each settled decision may reveal dependent decisions.
 
-Work in rounds. The frontier is every question whose prerequisites are already settled. Ask the whole frontier in one `question` tool call, with your recommended answer first and marked recommended. Wait for the answers, recompute the frontier, and continue.
+Ask a manageable batch of questions whose prerequisites are settled. Use the `question` tool when available, otherwise plain text. Include a recommendation where evidence supports one. Wait for answers before asking dependent questions.
 
 Find facts yourself with repository and research tools. Ask the user for decisions, preferences, constraints, and risk tolerance, not facts available from the environment.
 
-Do not ask questions whose answers depend on unresolved questions in the same round. Do not implement while grilling. When the frontier is empty, summarize the agreed decisions, remaining unknowns, and the smallest implementation-ready scope. Ask for confirmation before acting.
+Do not implement during the interview. Stop when meaningful decisions are settled or the user ends the interview; summarize agreed decisions, remaining unknowns, and implementation-ready scope. A subsequent explicit implementation request ends interview mode without another confirmation gate.

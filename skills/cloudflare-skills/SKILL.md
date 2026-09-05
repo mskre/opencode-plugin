@@ -1,32 +1,21 @@
 ---
 name: cloudflare-skills
-description: Use when working with Cloudflare Workers, Pages, DNS, tunnels, Access, R2, D1, KV, Durable Objects, Queues, cache rules, or Wrangler configuration.
+description: Use for explicit help finding or installing Cloudflare skills, not Cloudflare development or administration.
 ---
 
 # Cloudflare Skills
 
-Use this skill for Cloudflare application, edge, DNS, and infrastructure work.
+This is a skill directory and installation guide, not a Cloudflare product router.
 
-## Workflow
+## Directory
 
-1. Identify the Cloudflare product involved: Workers, Pages, DNS, Tunnel, Access, R2, D1, KV, Durable Objects, Queues, or cache/security rules.
-2. Inspect the existing project files before changing anything: `wrangler.toml`, `wrangler.json`, `package.json`, route config, environment bindings, and deployment scripts.
-3. Preserve existing production bindings and routes unless the user explicitly asks to change them.
-4. Prefer small config changes that can be deployed and rolled back independently.
-5. Validate locally with the project's existing commands before recommending deployment.
+- `cloudflare`: product selection and general platform work.
+- `workers-best-practices`, `wrangler`: Worker implementation and CLI operations.
+- `agents-sdk`, `durable-objects`: agents and stateful coordination.
+- `cloudflare-one`, `cloudflare-one-migrations`: Zero Trust and migration planning.
+- `cloudflare-email-service`, `turnstile-spin`, `web-perf`: email, bot protection, and performance.
+- `sandbox-stable`, `sandbox-next`, `sandbox-migrate-to-next`: Sandbox version-specific work.
 
-## Common Checks
+## Installation Help
 
-- Confirm account, zone, route, and project names before changing DNS or deployment config.
-- Treat production DNS and Access policy changes as high risk.
-- Keep secrets in Cloudflare secret bindings or environment variables, not committed files.
-- For Workers, verify bindings match both local dev and deployed environments.
-- For D1, confirm whether a migration is local, preview, or production before applying it.
-- For R2, confirm bucket name, public access, CORS, lifecycle rules, and cache behavior.
-- For Durable Objects, check class names, migrations, namespaces, and compatibility dates.
-
-## Output Style
-
-- State exactly what will change in Cloudflare and what remains untouched.
-- Include validation and rollback notes when changing deploy, DNS, or data storage behavior.
-- If deployment requires credentials or interactive auth, stop at the prepared command and explain what access is needed.
+Check the installed skills and configured discovery paths before suggesting an install. For OpenCode discovery or configuration changes, load `customize-opencode`. Use current official installation instructions; do not invent a package or overwrite local customizations. Install only what the user requested and verify discovery. This workflow does not authorize DNS, deployments, Access policies, data changes, or credential disclosure.

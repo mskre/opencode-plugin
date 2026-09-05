@@ -1,6 +1,6 @@
 ---
 name: grill-me
-description: Use ONLY when the user explicitly says "grill me", "interrogate me", or asks for a relentless requirements interview. Routes the session to the grilling workflow.
+description: Use only for an explicit "grill me" or requirements-interview request; delegates to grilling.
 license: MIT
 metadata:
   source: https://github.com/mattpocock/skills
@@ -9,4 +9,4 @@ metadata:
 
 # Grill Me
 
-Load the `grilling` skill and follow it for the current plan, design, or decision.
+Load `grilling` for the current plan, design, or decision. If already loaded, continue it rather than restarting the interview.

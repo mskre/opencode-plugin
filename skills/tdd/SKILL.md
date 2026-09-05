@@ -1,6 +1,6 @@
 ---
 name: tdd
-description: Use when the user explicitly requests test-first development, red-green-refactor, TDD, or integration tests. Implements one behavior slice at a time through public interfaces.
+description: Use only when the user explicitly requests TDD, test-first, red-green-refactor, or integration tests; tests public behavior in vertical slices.
 license: MIT
 metadata:
   source: https://github.com/mattpocock/skills
@@ -13,9 +13,9 @@ TDD is a red-green loop. Work in vertical slices: one behavior, one failing test
 
 ## Test Public Behavior
 
-Tests should verify behavior through a public interface, not implementation details. A useful test reads like a capability and survives internal refactoring. See `tests.md` and `mocking.md` for examples.
+Tests should verify behavior through a public interface, not implementation details, and survive internal refactoring.
 
-Choose the narrowest public seam that proves the requested behavior. Infer it from the specification and codebase. Ask the user only when multiple seams would create materially different product behavior or maintenance costs.
+Choose the narrowest public seam that proves the requested behavior from the specification and codebase. Ask only about unresolved product decisions. Load `tests.md` or `mocking.md` when test design or isolation needs guidance.
 
 ## Avoid These Tests
 
@@ -32,4 +32,4 @@ Choose the narrowest public seam that proves the requested behavior. Infer it fr
 4. Run it and confirm it passes.
 5. Repeat for the next behavior.
 
-Do not anticipate speculative cases. Refactor only when the passing implementation has concrete duplication or clarity problems.
+For integration-test-only requests, test existing behavior without forcing production changes; verify the test detects a controlled failure when feasible. Refactor after green only for concrete duplication or clarity problems, then rerun affected tests. Do not anticipate speculative cases.

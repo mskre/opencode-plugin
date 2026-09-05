@@ -1,88 +1,32 @@
 ---
 name: phantom-ui
-description: Use when adding skeleton loaders, loading placeholders, shimmer states, or structure-aware loading UI with the @aejkatappaja/phantom-ui Web Component. Applies to React, Next.js, Vue, Svelte, Angular, Solid, Qwik, HTMX, and plain HTML frontend apps.
+description: Use when adding structure-aware skeleton loading to a frontend with @aejkatappaja/phantom-ui. Applies to React, Next.js, Vue, Svelte, Angular, Solid, Qwik, HTMX, and plain HTML apps.
 ---
 
 # Phantom UI
 
-Use `@aejkatappaja/phantom-ui` for skeleton loaders that mirror the real DOM instead of maintaining separate skeleton components.
-
-## When To Use
-
-- Loading cards, rows, profiles, dashboards, feeds, tables, or async detail panels.
-- A frontend app already renders placeholder data while loading.
-- The team wants skeletons that stay aligned with the real component markup.
-
-Do not install it globally or in a home directory. Install it in the app repo that renders the UI.
-
-## Install
-
-Use the repo's package manager:
+Use the real component markup as the skeleton source so loading and loaded layouts stay aligned. Install `@aejkatappaja/phantom-ui` in the app repository, never globally. Use the repository's package manager:
 
 ```bash
 npm install @aejkatappaja/phantom-ui
+# or: pnpm add / bun add @aejkatappaja/phantom-ui
 ```
 
-```bash
-bun add @aejkatappaja/phantom-ui
-```
-
-```bash
-pnpm add @aejkatappaja/phantom-ui
-```
-
-Optional project setup from the app root:
-
-```bash
-npx @aejkatappaja/phantom-ui init
-```
-
-The init command may add JSX type declarations and SSR pre-hydration CSS. Inspect its changes before committing.
-
-## Basic Usage
-
-Import once near the app/component entry:
+Import it once near the app entry:
 
 ```ts
-import "@aejkatappaja/phantom-ui"
+import "@aejkatappaja/phantom-ui";
 ```
 
-Wrap real markup and toggle `loading`:
-
-```tsx
-<phantom-ui loading={isLoading}>
-  <div className="card">
-    <img src={user?.avatar ?? "/placeholder.png"} width="48" height="48" />
-    <h3>{user?.name ?? "Placeholder Name"}</h3>
-    <p>{user?.bio ?? "Short placeholder bio text."}</p>
-  </div>
-</phantom-ui>
-```
-
-For lists, use `count` while loading:
+Wrap the real markup and toggle `loading`; use `count` and `count-gap` for repeated rows:
 
 ```tsx
 <phantom-ui loading={isLoading} count={5} count-gap={8}>
   <div className="row">
-    <span>Placeholder Name</span>
-    <span>placeholder@example.com</span>
+    <span>{name ?? "Placeholder Name"}</span>
+    <span>{email ?? "placeholder@example.com"}</span>
   </div>
 </phantom-ui>
 ```
 
-## SSR CSS
-
-For SSR frameworks, add this to the root layout when needed:
-
-```ts
-import "@aejkatappaja/phantom-ui/ssr.css"
-```
-
-Common files: `app/layout.tsx`, `pages/_app.tsx`, `app.vue`, `src/routes/+layout.svelte`, `app/root.tsx`, `src/root.tsx`.
-
-## Rules
-
-- Keep real component markup as the skeleton source.
-- Use realistic placeholder text so skeleton dimensions match real content.
-- Do not build duplicate skeleton components unless `phantom-ui` cannot represent the shape.
-- Verify loading and loaded states in the browser.
+Use realistic placeholder lengths so the geometry matches. For SSR frameworks, add `@aejkatappaja/phantom-ui/ssr.css` in the root layout when needed; `npx @aejkatappaja/phantom-ui init` may add JSX types and pre-hydration CSS, so inspect its diff. Do not create duplicate skeleton components unless the web component cannot represent the shape. Verify loading, loaded, empty, error, keyboard, and reduced-motion states in a browser.

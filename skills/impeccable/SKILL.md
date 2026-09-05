@@ -1,6 +1,6 @@
 ---
 name: impeccable
-description: Use when the user wants to design, redesign, shape, critique, audit, polish, clarify, distill, harden, optimize, adapt, animate, colorize, extract, or otherwise improve a frontend interface. Covers websites, landing pages, dashboards, product UI, app shells, components, forms, settings, onboarding, and empty states. Handles UX review, visual hierarchy, information architecture, cognitive load, accessibility, performance, responsive behavior, theming, anti-patterns, typography, fonts, spacing, layout, alignment, color, motion, micro-interactions, UX copy, error states, edge cases, i18n, and reusable design systems or tokens. Also use for bland designs that need to become bolder or more delightful, loud designs that should become quieter, live browser iteration on UI elements, or ambitious visual effects that should feel technically extraordinary. Not for backend-only or non-UI tasks.
+description: Use for frontend visual design, UX critique, or interface refinement; routes to focused design playbooks, not backend work.
 version: 4.1.3
 user-invocable: true
 argument-hint: "[shape · audit|critique · animate|bolder|colorize|delight|layout|overdrive|quieter|typeset · adapt|clarify|distill · harden|onboard|optimize|polish · init|document|extract|live] [target]"
@@ -10,18 +10,21 @@ allowed-tools:
   - Bash(node .opencode/skills/impeccable/scripts/*)
 ---
 
-This skill gives you the tools and permission to create design that earns to be called out-of-distribution craft: Whereas before, your design work would have been safe, timid and measured, you now approach every design task as an award-winning design director with impeccable understanding for what makes exceptional design work: production-grade code, peak creativity, a clear POV, deep understanding of the needs of the client and users, and exceptional craft.
+# Impeccable
 
-Core principles:
-- Go all out. No hedging, no shortcuts. The deliverable must be complete (except assets the user must provide).
-- Dream big and bold. Distinct, beautiful, outstanding and highly inspiring work.
-- Verify in bounded passes, not a loop, and the ceiling covers the whole cycle: screenshots, defect scans, micro-edits, and rebuilds alike. Build fully, inspect once with a batched round (desktop and mobile together on the web; the shipped device classes on a native platform), fix everything it shows in one batch, confirm with at most one more round, and stop polishing. Open-ended self-QA burns the user's money doing worse what the finish handoffs do better.
+Use the requested design direction and existing product evidence. Keep work scoped to the requested surface.
+
+## Context And Verification
+
+These routing rules govern setup output and linked playbooks: sufficient brief, code, and visual context permit implementation without a broad interview or mandatory init. Ask only about unresolved decisions that materially affect the result; never simulate user approval. Missing PRODUCT.md or DESIGN.md alone is not a blocker. Use init when requested or when product discovery is genuinely needed, not as a prerequisite for every new surface.
+
+Inspect actual images before using them as references or accepting generated assets. For visual edits, open screenshots of affected states: representative mobile and desktop layouts for responsive web changes, or affected native device classes. Select locales by copy/layout risk, including long text or RTL when relevant; expand for shared changes or observed defects. Trigger reveal animations before capture. Batch fixes and recheck them; stop discretionary polishing, not unresolved correctness or accessibility defects. Report coverage and blockers rather than claiming unperformed visual checks.
 
 ## Setup
 
-1. Run `node <skill-base-dir>/scripts/context.mjs` once per session, where `<skill-base-dir>` is the loaded base directory the runtime reports for this skill; keep cwd at the user's project. That base directory resolves every `node .opencode/skills/impeccable/scripts/...` command in this skill and its references, and `.opencode/skills/impeccable/scripts` is the fallback only when the runtime reports no base directory. Pass a named source file or route as `--target <path>`. It loads PRODUCT.md, DESIGN.md, the matching surface brief, and native-platform guidance when applicable; follow its directives and do not rerun it.
+1. When project context needs discovery, run `node <skill-base-dir>/scripts/context.mjs` from the user's project; pass a named file or route as `--target <path>`. Reuse its output unless project or target context changes. The loaded base directory resolves script paths in this skill and its references; `.opencode/skills/impeccable` is the fallback when none is reported. It loads PRODUCT.md, DESIGN.md, surface briefs, and native guidance. Apply relevant findings subject to Context And Verification above, including when output says `BUILD_INIT_REQUIRED` or `PRODUCT_INIT_REQUIRED`.
 2. Load the request's playbook: its Commands-table reference for an explicit/implied sub-command, or [reference/new-work.md](reference/new-work.md) for a new surface or replacement visual world. Inspect target and incumbent visual truth before editing. When the app cannot run, start with committed visual-regression goldens or screenshot fixtures; verify target and freshness against current tokens, CSS, components, or assets, resolve conflicts, and compare theme/variant captures.
-3. After analysis and direction are resolved, load [reference/craft-floor.md](reference/craft-floor.md) immediately before editing UI. It carries the quality floor, the absolute bans, and the reflexes no detector catches. Do not load it for planning-only work.
+3. Before UI implementation, load [reference/craft-floor.md](reference/craft-floor.md) for applicable craft and accessibility checks. Skip it for planning-only work; the explicit brief and scope govern aesthetic prescriptions.
 
 ## How to design
 
@@ -70,17 +73,17 @@ Choose the mode from the requested surface, not the product, and persist it only
 
 Routing:
 
-- **No argument:** read [routing.md](reference/routing.md) and present its context-aware menu; never auto-run a command.
-- **Explicit or clearly implied command:** load its reference (native variant on native platforms) and follow it. Ask once if two commands fit.
-- **Otherwise:** treat the request as general design work. Missing PRODUCT.md routes a new surface or replacement world through init, then new-work; a narrow refinement of existing code proceeds on the incumbent implementation as context.mjs directs, offering init afterward rather than blocking on it.
+- **Bare invocation without an actionable request:** read [routing.md](reference/routing.md) and present its context-aware menu. An existing task does not need a menu just because no sub-command was named.
+- **Explicit or clearly implied command:** load its reference, using the native variant where applicable. Choose the closest fit; ask only if the choice changes user intent or scope.
+- **Otherwise:** use new-work for new surfaces or a requested replacement world; refine existing code in place for scoped changes. Missing context files do not force init when available evidence is sufficient.
 - `teach` aliases `init`. `craft` is a deprecated alias for ordinary new-work and adds nothing. `shape` owns task discovery, then enters new-work only for visual-world and surface-concept decisions.
 
 After init writes PRODUCT.md, resume without rerunning `context.mjs`; init loads the native platform reference itself when the platform it recorded is `ios`, `android`, or `adaptive`.
 
-**Pin / Unpin:** `node .opencode/skills/impeccable/scripts/pin.mjs <pin|unpin> <command>` creates or removes a standalone `/<command>` shortcut. Report the script's result concisely; relay stderr verbatim on error.
+**Pin / Unpin:** `node .opencode/skills/impeccable/scripts/pin.mjs <pin|unpin> <command>` creates or removes a standalone `/<command>` shortcut. Report the result or actionable error with secrets redacted.
 
 **Hooks:** `/impeccable hooks <on|off|status|ignore-rule|ignore-file|ignore-value|reset>` manages the design detector hook for this project (auto-runs the detector after UI file edits and surfaces findings). Load [reference/hooks.md](reference/hooks.md) when the user invokes it with any argument.
 
-**Doctor:** `/impeccable doctor` reports and repairs drift between this project's Impeccable artifacts (PRODUCT.md, DESIGN.md and its sidecar, config, surface briefs, the hook) and what this version reads. Load [reference/doctor.md](reference/doctor.md) when the user invokes it, or when they ask what is out of date, stale, or needs refreshing. A `CONTEXT_STALE` directive in Setup's output is the cheap subset of the same report; act on it there per its own instructions rather than running doctor unasked.
+**Doctor:** `/impeccable doctor` handles drift in product/design docs, sidecars, config, surface briefs, and hooks. Load [reference/doctor.md](reference/doctor.md) for explicit diagnosis or repair requests. Report `CONTEXT_STALE` findings without running doctor or repairing drift unasked.
 
 **Never repair drift as a side effect of a design task.** A `CONTEXT_STALE` finding is reported, not acted on, unless the user asks. The one exception is a finding marked `auto`, which the next write to that file performs anyway.

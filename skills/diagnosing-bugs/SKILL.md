@@ -1,6 +1,6 @@
 ---
 name: diagnosing-bugs
-description: Use ONLY for hard, intermittent, production-only, or performance bugs whose cause is not obvious after initial inspection. Builds a reproducible feedback loop before fixing. Do not use for straightforward type, syntax, or locally obvious errors.
+description: Use for difficult, intermittent, production-only, or performance bugs still unexplained after inspection; not obvious local errors.
 license: MIT
 metadata:
   source: https://github.com/mattpocock/skills
@@ -9,7 +9,7 @@ metadata:
 
 # Diagnosing Bugs
 
-Use this discipline for bugs where guessing is likely to waste time. Skip a phase only when the reason is explicit. Read the repository instructions and relevant project documentation before investigating.
+Use the steps needed to distinguish causes; skip work already settled by evidence.
 
 ## Protect Secrets
 
@@ -17,30 +17,19 @@ Commands, logs, traces, and captured requests may contain credentials or persona
 
 ## 1. Build A Feedback Loop
 
-Create one command that drives the real bug path and detects the user's exact symptom. Prefer, in order:
-
-1. A failing test at the public seam.
-2. A curl or HTTP script against the running service.
-3. A CLI invocation with fixture input and an output assertion.
-4. A Playwright script asserting DOM, console, or network behavior.
-5. A replayable captured request, event, or trace.
-6. A minimal throwaway harness.
-7. A seeded property or fuzz loop.
-8. `git bisect run` with an automated check.
-9. A differential check against a known-good version or configuration.
-10. A human-in-the-loop script based on `scripts/hitl-loop.template.sh`.
+Prefer a failing public-interface test. Otherwise use a replayable HTTP, CLI, browser, or trace check that detects the exact symptom. Use `scripts/hitl-loop.template.sh` when reproduction needs human input; use bisection or a known-good comparison when useful.
 
 Tighten the loop until it is specific, deterministic, fast, and runnable unattended. For flaky bugs, raise the reproduction rate with repetition, parallelism, controlled timing, or load.
 
-If no red-capable loop can be built, stop and state what was attempted. Ask only for the missing environment access, redacted artifact, or permission to add temporary instrumentation.
+If reproduction is unavailable, continue safe inspection or targeted instrumentation and label conclusions provisional. Ask only for access, a redacted artifact, or permission actually needed; do not claim a verified fix without evidence. Do not run mutating or load-generating production checks without authorization.
 
 ## 2. Reproduce And Minimise
 
-Run the loop and verify it catches the reported symptom. Shrink the input, setup, data, and steps one at a time while keeping the loop red. Every remaining element should be load-bearing.
+Verify the loop catches the reported symptom. Reduce inputs and setup when that helps isolate the cause, keeping the loop red.
 
 ## 3. Rank Hypotheses
 
-Write down three to five falsifiable hypotheses. Each must predict what observable result would change if it were correct. Record the ranking in a progress update, but continue autonomously unless a decision genuinely requires the user.
+Rank plausible causes and test their distinguishing predictions. Do not invent extra hypotheses once evidence isolates the cause.
 
 ## 4. Instrument
 
