@@ -53,6 +53,24 @@
       "commandsPath": "/Users/mikkel/.config/opencode/command",
       "levels": ["lite", "full", "ultra", "off"],
       "stateFile": "/Users/mikkel/.config/opencode/.ponytail-active"
+    },
+    {
+      "name": "fcm-opencode",
+      "type": "external-checkout",
+      "status": "beta",
+      "source": "https://github.com/vava-nessa/free-coding-models",
+      "checkout": "/Users/mikkel/.local/share/free-coding-models",
+      "pluginPath": "/Users/mikkel/.local/share/free-coding-models/packages/fcm-opencode/index.js",
+      "installedPluginPath": "/Users/mikkel/.config/opencode/plugins/fcm-opencode.js",
+      "cliDependency": "free-coding-models@latest (npm -g, provides API-key config and the fcm-agent-core deps)",
+      "nodeResolutionLinks": [
+        "/Users/mikkel/.local/share/free-coding-models/node_modules -> /opt/homebrew/lib/node_modules/free-coding-models/node_modules",
+        "/Users/mikkel/.local/share/free-coding-models/packages/node_modules/free-coding-models -> ../../ (self-link so 'free-coding-models/src/...' imports resolve)"
+      ],
+      "commands": ["fcm", "fcm-status", "fcm-router"],
+      "cacheFile": "/Users/mikkel/.cache/free-coding-models/fcm-opencode-cache.json",
+      "apiKeyConfig": "~/.free-coding-models.json (written by the free-coding-models CLI) or per-provider env vars, e.g. GROQ_API_KEY, CEREBRAS_API_KEY, NVIDIA_API_KEY",
+      "notes": "Not published to npm as a standalone package; requires a git clone of the monorepo. Update by re-cloning/pulling the checkout, not npm."
     }
   ],
   "mcpServers": [
@@ -114,13 +132,13 @@
     {
       "name": "google-scholar",
       "type": "local",
-      "command": "npx tsx /Users/mikkel/google-scholar-mcp/src/index.ts",
+      "command": "npx tsx /Users/mikkel/dev/personal/google-scholar-mcp/src/index.ts",
       "enabledByDefault": false
     },
     {
       "name": "trogon",
       "type": "local",
-      "command": "npx tsx /Users/mikkel/trogon/packages/mcp-server/src/index.ts --server-url wss://trogon.bitstraum.no/yjs --api-base https://trogon.bitstraum.no/api --agent-name OpenCode",
+      "command": "npx tsx /Users/mikkel/dev/personal/trogon/packages/mcp-server/src/index.ts --server-url wss://trogon.bitstraum.no/yjs --api-base https://trogon.bitstraum.no/api --agent-name OpenCode",
       "enabledByDefault": false
     },
     {
@@ -133,6 +151,36 @@
       "name": "supabase",
       "type": "remote",
       "url": "http://127.0.0.1:15434/api/mcp",
+      "enabledByDefault": false
+    },
+    {
+      "name": "cloudflare",
+      "type": "remote",
+      "url": "https://mcp.cloudflare.com/mcp",
+      "enabledByDefault": false
+    },
+    {
+      "name": "cloudflare-docs",
+      "type": "remote",
+      "url": "https://docs.mcp.cloudflare.com/mcp",
+      "enabledByDefault": false
+    },
+    {
+      "name": "cloudflare-bindings",
+      "type": "remote",
+      "url": "https://bindings.mcp.cloudflare.com/mcp",
+      "enabledByDefault": false
+    },
+    {
+      "name": "cloudflare-builds",
+      "type": "remote",
+      "url": "https://builds.mcp.cloudflare.com/mcp",
+      "enabledByDefault": false
+    },
+    {
+      "name": "cloudflare-observability",
+      "type": "remote",
+      "url": "https://observability.mcp.cloudflare.com/mcp",
       "enabledByDefault": false
     }
   ],
@@ -216,7 +264,19 @@
       "repositoryPath": "skills/impeccable/SKILL.md",
       "source": "https://github.com/pbakaus/impeccable",
       "version": "4.1.3",
-      "command": "impeccable"
+      "command": "impeccable",
+      "duplicateLocations": [
+        {
+          "path": "/Users/mikkel/.agents/skills/impeccable/SKILL.md",
+          "repositoryPath": "shared-skills/impeccable/SKILL.md",
+          "variant": "shared-agent metadata, paths, commands and resources"
+        },
+        {
+          "path": "/Users/mikkel/.config/opencode/skills/impeccable/SKILL.md",
+          "repositoryPath": "skills/impeccable/SKILL.md",
+          "variant": "identical to the OpenCode tree"
+        }
+      ]
     },
     {
       "name": "industrial-brutalist-ui",
@@ -247,8 +307,8 @@
     },
     {
       "name": "playwright-cli",
-      "type": "external-claude-skill",
-      "path": "/Users/mikkel/.claude/skills/playwright-cli/SKILL.md",
+      "type": "external-agents-skill",
+      "path": "/Users/mikkel/.agents/skills/playwright-cli/SKILL.md",
       "repositoryPath": "skills/playwright-cli/SKILL.md",
       "source": "https://github.com/microsoft/playwright-cli",
       "dependency": "@playwright/cli@latest"
@@ -288,6 +348,165 @@
       "repositoryPath": "skills/wizard/SKILL.md",
       "source": "https://github.com/mattpocock/skills",
       "adapted": true
+    },
+    {
+      "name": "agents-sdk",
+      "type": "external-agents-skill",
+      "path": "/Users/mikkel/.agents/skills/agents-sdk/SKILL.md",
+      "repositoryPath": "shared-skills/agents-sdk/SKILL.md"
+    },
+    {
+      "name": "cloudflare",
+      "type": "external-agents-skill",
+      "path": "/Users/mikkel/.agents/skills/cloudflare/SKILL.md",
+      "repositoryPath": "shared-skills/cloudflare/SKILL.md"
+    },
+    {
+      "name": "cloudflare-email-service",
+      "type": "external-agents-skill",
+      "path": "/Users/mikkel/.agents/skills/cloudflare-email-service/SKILL.md",
+      "repositoryPath": "shared-skills/cloudflare-email-service/SKILL.md"
+    },
+    {
+      "name": "cloudflare-one",
+      "type": "external-agents-skill",
+      "path": "/Users/mikkel/.agents/skills/cloudflare-one/SKILL.md",
+      "repositoryPath": "shared-skills/cloudflare-one/SKILL.md"
+    },
+    {
+      "name": "cloudflare-one-migrations",
+      "type": "external-agents-skill",
+      "path": "/Users/mikkel/.agents/skills/cloudflare-one-migrations/SKILL.md",
+      "repositoryPath": "shared-skills/cloudflare-one-migrations/SKILL.md"
+    },
+    {
+      "name": "durable-objects",
+      "type": "external-agents-skill",
+      "path": "/Users/mikkel/.agents/skills/durable-objects/SKILL.md",
+      "repositoryPath": "shared-skills/durable-objects/SKILL.md"
+    },
+    {
+      "name": "frontend-design",
+      "type": "external-agents-skill",
+      "path": "/Users/mikkel/.agents/skills/frontend-design/SKILL.md",
+      "repositoryPath": "shared-skills/frontend-design/SKILL.md"
+    },
+    {
+      "name": "sandbox-migrate-to-next",
+      "type": "external-agents-skill",
+      "path": "/Users/mikkel/.agents/skills/sandbox-migrate-to-next/SKILL.md",
+      "repositoryPath": "shared-skills/sandbox-migrate-to-next/SKILL.md"
+    },
+    {
+      "name": "sandbox-next",
+      "type": "external-agents-skill",
+      "path": "/Users/mikkel/.agents/skills/sandbox-next/SKILL.md",
+      "repositoryPath": "shared-skills/sandbox-next/SKILL.md"
+    },
+    {
+      "name": "sandbox-stable",
+      "type": "external-agents-skill",
+      "path": "/Users/mikkel/.agents/skills/sandbox-stable/SKILL.md",
+      "repositoryPath": "shared-skills/sandbox-stable/SKILL.md"
+    },
+    {
+      "name": "supabase",
+      "type": "external-agents-skill",
+      "path": "/Users/mikkel/.agents/skills/supabase/SKILL.md",
+      "repositoryPath": "shared-skills/supabase/SKILL.md"
+    },
+    {
+      "name": "supabase-postgres-best-practices",
+      "type": "external-agents-skill",
+      "path": "/Users/mikkel/.agents/skills/supabase-postgres-best-practices/SKILL.md",
+      "repositoryPath": "shared-skills/supabase-postgres-best-practices/SKILL.md"
+    },
+    {
+      "name": "turnstile-spin",
+      "type": "external-agents-skill",
+      "path": "/Users/mikkel/.agents/skills/turnstile-spin/SKILL.md",
+      "repositoryPath": "shared-skills/turnstile-spin/SKILL.md"
+    },
+    {
+      "name": "web-perf",
+      "type": "external-agents-skill",
+      "path": "/Users/mikkel/.agents/skills/web-perf/SKILL.md",
+      "repositoryPath": "shared-skills/web-perf/SKILL.md"
+    },
+    {
+      "name": "workers-best-practices",
+      "type": "external-agents-skill",
+      "path": "/Users/mikkel/.agents/skills/workers-best-practices/SKILL.md",
+      "repositoryPath": "shared-skills/workers-best-practices/SKILL.md"
+    },
+    {
+      "name": "wrangler",
+      "type": "external-agents-skill",
+      "path": "/Users/mikkel/.agents/skills/wrangler/SKILL.md",
+      "repositoryPath": "shared-skills/wrangler/SKILL.md"
+    },
+    {
+      "name": "opencode-skill-creator",
+      "type": "plugin-managed-skill",
+      "path": "/Users/mikkel/.config/opencode/skills/opencode-skill-creator/SKILL.md",
+      "repositoryPath": "plugin-skills/opencode-skill-creator/SKILL.md"
+    },
+    {
+      "name": "ponytail",
+      "type": "vendor-skill",
+      "path": "/Users/mikkel/.config/opencode/vendor/ponytail/skills/ponytail/SKILL.md",
+      "repositoryPath": "ponytail-skills/ponytail/SKILL.md"
+    },
+    {
+      "name": "ponytail-audit",
+      "type": "vendor-skill",
+      "path": "/Users/mikkel/.config/opencode/vendor/ponytail/skills/ponytail-audit/SKILL.md",
+      "repositoryPath": "ponytail-skills/ponytail-audit/SKILL.md"
+    },
+    {
+      "name": "ponytail-debt",
+      "type": "vendor-skill",
+      "path": "/Users/mikkel/.config/opencode/vendor/ponytail/skills/ponytail-debt/SKILL.md",
+      "repositoryPath": "ponytail-skills/ponytail-debt/SKILL.md"
+    },
+    {
+      "name": "ponytail-gain",
+      "type": "vendor-skill",
+      "path": "/Users/mikkel/.config/opencode/vendor/ponytail/skills/ponytail-gain/SKILL.md",
+      "repositoryPath": "ponytail-skills/ponytail-gain/SKILL.md"
+    },
+    {
+      "name": "ponytail-help",
+      "type": "vendor-skill",
+      "path": "/Users/mikkel/.config/opencode/vendor/ponytail/skills/ponytail-help/SKILL.md",
+      "repositoryPath": "ponytail-skills/ponytail-help/SKILL.md"
+    },
+    {
+      "name": "ponytail-review",
+      "type": "vendor-skill",
+      "path": "/Users/mikkel/.config/opencode/vendor/ponytail/skills/ponytail-review/SKILL.md",
+      "repositoryPath": "ponytail-skills/ponytail-review/SKILL.md"
     }
-  ]
+  ],
+  "skillSnapshot": {
+    "date": "2026-09-05",
+    "canonicalNames": 44,
+    "localAdaptations": true,
+    "articleUrl": "https://x.com/pvncher/status/2095991462416490862",
+    "articleTitle": "Rethinking skills and prompts for GPT-6 Astra",
+    "articleAuthor": "Eric Provencher",
+    "articleDate": "2026-09-04",
+    "scope": "Skill trees and resources only; no runtime AGENTS.md, plugin implementation, config, credentials or state changes.",
+    "restore": "Copy the parent tree of repositoryPath to the parent tree of path; duplicateLocations use their own mappings. Playwright restores from skills/playwright-cli to .agents/skills/playwright-cli only.",
+    "omittedResources": [
+      "shared-skills/cloudflare/references/zaraz/IMPLEMENTATION_SUMMARY.md",
+      "shared-skills/impeccable/scripts/data/font-index-failures.json",
+      "shared-skills/supabase/CHANGELOG.md",
+      "shared-skills/supabase-postgres-best-practices/CHANGELOG.md",
+      "shared-skills/supabase-postgres-best-practices/references/_contributing.md",
+      "shared-skills/supabase-postgres-best-practices/references/_template.md"
+    ],
+    "excluded": [".git", "node_modules", "__pycache__", "*.pyc", ".DS_Store", ".cache", "*.cache.json", ".pytest_cache", ".mypy_cache", ".ruff_cache", ".venv", "venv", ".env", ".env.*", "*.pem", "*.key", "*.log", ".playwright-cli", "test-results", "playwright-report", "runtime", "secrets"],
+    "upstreamUpdateRisk": "Upstream installs, skill generation and vendor updates can overwrite local adaptations; review and reapply snapshots before restarting OpenCode."
+  }
 }
