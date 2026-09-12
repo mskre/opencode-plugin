@@ -6,7 +6,7 @@
       "type": "npm",
       "spec": "opencode-claude-auth@latest",
       "configuredIn": "plugin",
-      "status": "disabled 2026-09-06: removed from opencode.json plugin array (disabled-plugins.json is not respected by OpenCode, plugin kept warning)"
+      "status": "enabled 2026-09-12: restored to opencode.json plugin array; requires valid Claude Code credentials and OpenCode restart"
     },
     {
       "name": "opencode-notifier",

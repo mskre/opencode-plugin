@@ -35,7 +35,7 @@ OpenCode adapter for `free-coding-models` (FCM): scans free coding LLM providers
 
 - `@nick-vi/opencode-type-inject@latest` for direct type injection support.
 - `opencode-goal-plugin@latest` for the `/goal` session objective and auto-continue workflow.
-- `opencode-claude-auth@latest` disabled 2026-09-06 (removed from `opencode.json`; `disabled-plugins.json` is not respected by OpenCode). Re-add to the `plugin` array to use Anthropic models via Claude Code credentials.
+- `opencode-claude-auth@latest` re-enabled 2026-09-12 in `opencode.json` to use Anthropic models via Claude Code credentials. Run `claude auth login --claudeai` if logged out, then restart OpenCode. `disabled-plugins.json` was not respected by OpenCode when previously disabling this plugin; remove the entry from the `plugin` array to disable it.
 - `magic-compact` v1.1.0 for lossless manual context compression via `/magic-compact`; `/magic-stats` reports token and cost savings.
 
 ## MCP Servers
