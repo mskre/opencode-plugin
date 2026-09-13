@@ -1,5 +1,12 @@
 {
   "globalConfig": "/Users/mikkel/.config/opencode/opencode.json",
+  "defaultModel": {
+    "model": "openai/gpt-5.6-sol",
+    "agents": {
+      "build": "low",
+      "plan": "low"
+    }
+  },
   "plugins": [
     {
       "name": "opencode-claude-auth",
