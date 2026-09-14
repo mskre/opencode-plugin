@@ -2,7 +2,7 @@
 
 A collection of local plugins and install tracking for my global [OpenCode](https://opencode.ai) setup.
 
-**Default model:** `openai/gpt-5.6-sol`, using the `low` variant for both the built-in `build` and `plan` agents.
+**Default model:** `openai/gpt-5.6-luna` with the `xhigh` variant for the built-in `build` agent. The built-in `plan` agent uses `openai/gpt-5.6-sol` with the `high` variant.
 
 > **Tip:** Using an AI coding assistant? Skip to the [LLM Install](#llm-install) section and paste the instructions directly into your assistant for automated setup.
 
